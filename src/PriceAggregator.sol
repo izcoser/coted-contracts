@@ -102,7 +102,7 @@ contract PriceAggregator is AccessControl {
         }
         _grantRole(ORACLE_ROLE, oracle);
         oracles.push(oracle);
-        oracleScore[oracle] = 100 * 10 ** DECIMALS;
+        oracleScore[oracle] = 100;
     }
 
     function removeOracle(address oracle) external onlyRole(ADMIN_ROLE) {

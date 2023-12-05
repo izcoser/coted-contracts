@@ -101,14 +101,14 @@ contract ReportPrice is Script, Test {
         apy_1[2] = apy_ipca;
 
         uint256[] memory apy_2 = new uint256[](3);
-        apy_2[0] = (price_pre * (10 + random1)) / 10;
-        apy_2[1] = (price_selic * (10 + random2)) / 10;
-        apy_2[2] = (price_ipca * (10 + random1)) / 10;
+        apy_2[0] = apy_pre;
+        apy_2[1] = apy_selic;
+        apy_2[2] = apy_ipca;
 
         uint256[] memory apy_3 = new uint256[](3);
-        apy_3[0] = (price_pre * (10 - random2)) / 10;
-        apy_3[1] = (price_selic * (10 - random1)) / 10;
-        apy_3[2] = (price_ipca * (10 - random2)) / 10;
+        apy_3[0] = apy_pre;
+        apy_3[1] = apy_selic;
+        apy_3[2] = apy_ipca;
 
         vm.startBroadcast(vm.envUint("PRIVATE_KEY"));
         priceAggregator.reportPrices(tokens, prices_1, apy_1);
@@ -224,7 +224,7 @@ contract GetDeploymentTime is Script {
     }
 }
 
-contract GetLatestCompletedRound is Script {
+contract GetLatestRound is Script {
     function run() public {
         PriceAggregator priceAggregator = PriceAggregator(
             vm.envAddress("PRICE_AGGREGATOR_ADDRESS")

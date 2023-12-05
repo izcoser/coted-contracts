@@ -1,19 +1,16 @@
-## Foundry
+## CoTeD smart contracts
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+Esse repositório contém os smart contracts desenvolvidos para o projeto CoTeD - Cotação do Tesouro Direto, submetido pela equipe [Venturus](https://github.com/venturusbr) à hackathon de tokenização de títulos públicos do tesouro. O framework usado para desenvolvimento foi o [Foundry](https://book.getfoundry.sh/). O repositório conta com testes unitários (incluindo fuzzers) e scripts de deploy.
 
-Foundry consists of:
+O contrato `PriceAggregator.sol` permite que um grupo permissionado de oráculos submeta preços e taxas de tokens representando títulos do tesouro pela função `reportPrices`. A cada 30 minutos, a função `finishRounds` deve ser chamada para que os preços e taxas submetidos sejam agregados em uma média e uma mediana. Os oráculos que submetem preços mais próximos das médias ganham mais pontos (`score`).
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+Os dados salvos no contrato podem então ser consumidos por frontends para exibição simples e também por smart contracts que desejam construir lógica de negócios customizada baseada em preços e taxas de títulos públicos. Aplicações que são possíveis com o consumo desses dados incluem mercados de empréstimos colateralizados, mercados de troca com alavancagem, sistemas que envolvem lastros e stablecoins.
 
-## Documentation
+Esse contrato foi implantado na rede Sepolia no endereço [0xe10c2e06f944cb1ddb18ca478534bf55015bfe20](https://sepolia.etherscan.io/address/0xe10c2e06f944cb1ddb18ca478534bf55015bfe20). Dados não necessariamente acurados foram fornecidos para testagem do frontend.
 
-https://book.getfoundry.sh/
+O frontend desenvolvido encontra-se [neste](https://github.com/izcoser/drex-oracle-frontend) repositório.
 
-## Usage
+## Uso
 
 ### Build
 
@@ -21,46 +18,8 @@ https://book.getfoundry.sh/
 $ forge build
 ```
 
-### Test
+### Testes
 
 ```shell
 $ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
 ```
