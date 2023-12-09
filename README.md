@@ -23,3 +23,7 @@ $ forge build
 ```shell
 $ forge test
 ```
+
+### Licença
+
+MIT
