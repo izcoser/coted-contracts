@@ -10,7 +10,7 @@ Os dados salvos no contrato podem então ser consumidos por frontends para exibi
 
 Esse contrato foi implantado na rede Sepolia no endereço [0xe10c2e06f944cb1ddb18ca478534bf55015bfe20](https://sepolia.etherscan.io/address/0xe10c2e06f944cb1ddb18ca478534bf55015bfe20). Dados não necessariamente acurados foram fornecidos para testagem do frontend.
 
-O frontend desenvolvido encontra-se [neste](https://github.com/izcoser/drex-oracle-frontend) repositório.
+O frontend desenvolvido encontra-se [neste](https://github.com/izcoser/coted-frontend) repositório.
 
 ## Uso
 
