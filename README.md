@@ -10,7 +10,7 @@ Data saved in the contract can then be consumed by frontends for simple display 
 
 The smart contract was deployed to Sepolia at [0xe10c2e06f944cb1ddb18ca478534bf55015bfe20](https://sepolia.etherscan.io/address/0xe10c2e06f944cb1ddb18ca478534bf55015bfe20). Data (not necessarily accurate) has been provided to the contract to test the frontend. 
 
-The frontend is found at [this](https://github.com/izcoser/drex-oracle-frontend) repository.
+The frontend is found at [this](https://github.com/izcoser/coted-frontend) repository.
 
 ## Usage
 
